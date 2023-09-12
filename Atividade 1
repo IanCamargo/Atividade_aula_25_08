@@ -1,6 +1,8 @@
 #include <stdio.h>
 
-//Atividade Realizado em Sala de Aula. Na atividade o programa recebe o nome do usuário e um número que o mesmo digitar e depois mostra o nome e o número escolhido pelo usuário.
+//Atividade Realizado em Sala de Aula.
+//Na atividade o programa recebe o nome do usuário e um número que o mesmo digitar.
+//Depois mostra o nome e o número escolhido pelo usuário.
 
 int main(void) {
 

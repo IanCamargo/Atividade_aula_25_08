@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+//Atividade realizada em sala de aula.
+//Programa recebe 3 notas do usuário, apartir disso calcula a média das notas.
+//Devolvendo o resultado da média para o usuário.
+
+int main(void) {
+
+  float n1,n2,n3,media;
+
+    printf("\n Nota 1: ");
+    scanf("%f", &n1);
+    printf("\n Nota 2: ");
+    scanf("%f", &n2);
+    printf("\n Nota 3: ");
+    scanf("%f", &n3);
+
+      media=(n1+n2+n3)/3;
+
+    printf("\n Media %.2f",media);
+
+}

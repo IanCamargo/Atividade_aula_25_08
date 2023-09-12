@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+//Atividade Realizada em sala de aula.
+//O programa recebe o nome do funcionário, a sua idade e seu salário bruto.
+//O programa calcula o ano em que ele nasceu.
+//Se o salário for maior que R$1000,00 então terá um desconto de 8%.
+//Se o salário for menor que R$1000,00 então não terá alteração no mesmo.
+//O programa retorna o Nome, Idade, Ano de Nascimento, Salário Bruto, Desconto, Salário Líquido.
+
+int main(void) {
+  int idade,anonasc;
+  float salario, salarioliq,desconto;
+  char nome[10];
+
+    printf("\n Informe o nome do colaborador: ");
+      scanf("%s",&nome);
+    printf("\n Informe qual a idade: ");
+      scanf("%d",&idade);
+    printf("\n Informe seu Salário Bruto: ");
+      scanf("%f",&salario);
+  
+        anonasc=2023-idade;
+
+      if(salario>1000)
+      {
+        salarioliq=salario*0.92;
+      }else{
+        salarioliq=salario;
+      }
+
+        desconto=salario-salarioliq;
+
+    printf("%s sua idade é %d, nasceu no ano de %d.",nome,idade,anonasc);
+
+    printf("\n\n");
+
+    printf("Seu salário bruto é %.2f com um desconto de %.2f resulta em salario de %.2f",salario,desconto,salarioliq);
+}

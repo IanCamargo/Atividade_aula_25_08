@@ -1,0 +1,67 @@
+#include <stdio.h>
+
+//Atividade realizada em sala de aula.
+//O programa recebe o Nome do cliente, Produto, Valor, Quantidade, Parcelas.
+//Valor é o valor do produto vezes a quantidade.
+//Pagando a vista, cliente ganha 10% de desconto.
+//Pagando em 2 a 5 parcelas, valor sem alteração.
+//Pagando em 6 a 10 parcelas, 8% de juros.
+//Pagando em 11 ou mais parcelas, 12% de juros + R$300,00.
+//Se o usuário gastar mais de R$300,00 o sistema agredece.
+//Se o usuário gastar menos de R$300,00 o sistema da uma sugestão que o usuário poderia ter aproveitado mais.
+
+int main(void) {
+  
+  float valorpro,quantidade,valorfin,desconto,valorparcela,parcela;
+  char nome[20],produto[50];
+
+    printf("\n Qual seu Nome? ");
+      scanf("%s",&nome);
+    printf("\n Qual Produto Você Escolheu? ");
+      scanf("%s",&produto);
+    printf("\n Qual o Valor do Produto? ");
+      scanf("%f",&valorpro);
+    printf("\n Quantas Unidades Você Está Levando? ");
+      scanf("%f",&quantidade);
+    printf("\n Quantas Parcelas? ");
+      scanf("%f",&parcela);
+  
+    valorfin = valorpro*quantidade;
+
+    if(parcela==1) {
+        desconto = (valorfin*0.10);
+        valorparcela = valorfin - desconto;
+        printf("\n\n");
+        printf(" %s, você Parcelou em %.0f vez. As parcela são de R$%.2f",nome,parcela,valorparcela);
+      } 
+      else if(parcela>=2 && parcela<=5) {
+        valorparcela = valorfin/parcela;
+        printf("\n\n");
+        printf(" %s, você Parcelou em %.0f vezes. As parcela são de R$%.2f",nome,parcela,valorparcela);
+      } 
+      else if (parcela>=6 && parcela<=10) {
+        desconto = (valorfin*0.08);
+        valorparcela = (valorfin + desconto)/parcela;
+        printf("\n\n");
+        printf(" %s, você Parcelou em %.0f vezes. As parcela são de R$%.2f",nome,parcela,valorparcela);
+      }
+      else {
+        desconto = (valorfin*0.12)+300;
+        valorparcela = (valorfin + desconto)/parcela;
+        printf("\n\n");
+        printf(" %s, você Parcelou em %.0f vezes. As parcela são de R$%.2f",nome,parcela,valorparcela);
+      }
+
+      valorfin = valorparcela*parcela;
+  
+        if(valorfin>300)
+        {
+          printf("\n\n");
+          printf(" Valor Total da Compra: R$%.2f\n",valorfin);
+          printf("\n Volte Sempre!!!");
+        }else{
+          printf("\n\n");
+          printf(" Valor Total da Compra: R$%.2f\n",valorfin);
+          printf("\n Poderia Desfrutar Melhor de Nossos Produtos!!!");
+        }
+}
